@@ -7,7 +7,7 @@ const inter = Inter({
 export default function Brief({para}: {para: string}){
     return (
         <div className={inter.className}>
-        <p className="text-sm text-zinc-400 min-w-10 mt-3 max-w-60 text-center ">
+        <p className="text-lg text-zinc-400 min-w-10 mt-3 max-w-72 text-center ">
            {para}
         </p>
 

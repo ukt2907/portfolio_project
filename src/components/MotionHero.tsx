@@ -20,7 +20,7 @@ export default function MotionHero({headingName}:{headingName: string}){
         transition={{duration:0.5}}
         >
         <div className={calistoga.className}>
-            <h1 className="text-4xl sm:text-5xl text-center max-w-72 sm:max-w-96">{headingName}</h1>
+            <h1 className="text-4xl text-white   sm:text-5xl text-center max-w-72 sm:max-w-96">{headingName}</h1>
        </div>
         </motion.div>
     )

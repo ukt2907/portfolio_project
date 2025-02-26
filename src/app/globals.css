@@ -7,12 +7,27 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-violet-400: theme("colors.violet.400");
+    --color-fuchsia-400: theme("colors.fuchsia.400");
+    --color-amber-300: theme("colors.amber.400");
+    --color-teal-300: theme("colors.teal.400");
+    --color-gray-950: theme("colors.gray.400");
+  }
+
+  .absolute-center{
+    @apply absolute top-1/2 left-1/2 transform
+    -translate-y-1/2 -translate-x-1/2
+  }
+
+  .flex-center{
+    @apply flex items-center justify-center
   }
 }
+
+ 
 
 body {
   color: var(--foreground);
