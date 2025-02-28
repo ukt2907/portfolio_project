@@ -1,4 +1,4 @@
-"use client";  // ✅ Yeh line add karni hai
+"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -7,11 +7,19 @@ import { GrProjects } from "react-icons/gr";
 import { IoHomeOutline } from "react-icons/io5";
 import { TbMessage2 } from "react-icons/tb";
 
+
+const navLinks = [
+  { href: "/", label: "Home", icon: <IoHomeOutline className="text-xl" /> },
+  { href: "#projects", label: "Projects", icon: <GrProjects className="text-xl" /> },
+  { href: "#about", label: "About", icon: <FaRegUser className="text-xl" /> },
+  { href: "#contact", label: "Contact", icon: <TbMessage2 className="text-xl" /> },
+];
+
 type IconButtonProps = {
   href: string;
   children: React.ReactNode;
   isActive: boolean;
-  label: string
+  label: string;
   onClick: () => void;
 };
 
@@ -24,10 +32,12 @@ const IconButton = ({ href, children, isActive, onClick, label }: IconButtonProp
     >
       {children}
     </div>
-    <span className="absolute top-14 left-1/2 -translate-x-1/2 
-        text-sm text-white bg-gray-400 px-2  rounded-md
-        backdrop-blur-lg bg-opacity-10  bg-clip-padding backdrop-filter
-      opacity-0 group-hover:opacity-100 transition-all ease-out duration-300">
+    <span
+      className="absolute top-14 left-1/2 -translate-x-1/2 
+        text-sm text-white bg-gray-400 px-2 rounded-md
+        backdrop-blur-lg bg-opacity-10 bg-clip-padding backdrop-filter
+        opacity-0 group-hover:opacity-100 transition-all ease-out duration-300"
+    >
       {label}
     </span>
   </Link>
@@ -42,18 +52,17 @@ export default function Navlink() {
         bg-gray-400 rounded-full bg-clip-padding backdrop-filter
         backdrop-blur-lg bg-opacity-10"
     >
-      <IconButton href="/" label="Home" isActive={activeTab === "/"} onClick={() => setActiveTab("/")}>
-        <IoHomeOutline className="text-xl" />
-      </IconButton>
-      <IconButton href="#projects" label="Projects" isActive={activeTab === "#projects"} onClick={() => setActiveTab("#projects")}>
-        <GrProjects className="text-xl" />
-      </IconButton>
-      <IconButton href="#about" label="About" isActive={activeTab === "#about"} onClick={() => setActiveTab("#about")}>
-        <FaRegUser className="text-xl" />
-      </IconButton>
-      <IconButton href="#contact" label="Contact" isActive={activeTab === "#contact"} onClick={() => setActiveTab("#contact")}>
-        <TbMessage2 className="text-xl" />
-      </IconButton>
+      {navLinks.map((link) => (
+        <IconButton
+          key={link.href} 
+          href={link.href}
+          label={link.label}
+          isActive={activeTab === link.href}
+          onClick={() => setActiveTab(link.href)}
+        >
+          {link.icon}
+        </IconButton>
+      ))}
     </div>
   );
 }

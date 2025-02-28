@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "@studio-freight/react-lenis": "^0.0.47",
+    "@types/nodemailer": "^6.4.17",
     "framer-motion": "^12.4.7",
     "gsap": "^3.12.7",
     "lucide-react": "^0.475.0",
     "next": "^15.1.7",
+    "nodemailer": "^6.10.0",
     "prisma": "^6.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
     "react-starfield": "^1.0.3",
+    "resend": "^4.1.2",
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {

@@ -21,6 +21,31 @@
     @apply absolute top-1/2 left-1/2 transform
     -translate-y-1/2 -translate-x-1/2
   }
+  @keyframes move-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes move-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-move-left {
+    animation: move-left linear infinite;
+  }
+  
+  .animate-move-right {
+    animation: move-right linear infinite;
+  }
 
   .flex-center{
     @apply flex items-center justify-center

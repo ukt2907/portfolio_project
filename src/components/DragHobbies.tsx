@@ -27,7 +27,8 @@ export default function DragHobbies({ name, containerRef }: DragHobbiesProp) {
       dragElastic={0.2}
       whileDrag={{ scale: 1.2 }}
       animate={{ x: position.x, y: position.y }} 
-      className=" absolute bg-black rounded-3xl text-zinc-800 bg-white/90 font-semibold px-7 text-base py-1 text-center"
+      className=" absolute rounded-3xl bg-green-500 text-zinc-800 font-semibold px-7 text-base py-1 text-center"
+      
     >
       {name}
     </motion.div>

@@ -53,7 +53,7 @@ export default function Projects() {
             scale: scrollYProgress,
             opacity:scrollYProgress
           }}
-         className=" mt-[43vh]  ">
+         className="mt-32 pb-10 ">
             <div className="flex flex-col items-center">
                 <MotionHero headingName="Featured Projects"/>
                 <Brief para="See how I transformed concepts into engaing digital experiences"/>
